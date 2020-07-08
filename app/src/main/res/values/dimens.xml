@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="borderRadiusSmall">15dp</dimen>
+    <dimen name="borderRadiusLarge">30dp</dimen>
+    <dimen name="padding">5dp</dimen>
+    <dimen name="elevation">3dp</dimen>
+</resources>

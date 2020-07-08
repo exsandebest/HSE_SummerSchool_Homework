@@ -24,3 +24,6 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+repositories {
+    maven { url "https://dl.bintray.com/eadm/ru.nobird.android" }
+}

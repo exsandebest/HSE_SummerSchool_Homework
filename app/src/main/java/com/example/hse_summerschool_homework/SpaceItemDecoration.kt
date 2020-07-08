@@ -15,5 +15,5 @@ class SpaceItemDecoration : RecyclerView.ItemDecoration() {
         outRect.bottom = 10
         outRect.left = 20
         outRect.right = 20
-        }
+    }
 }

@@ -7,17 +7,15 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import kotlinx.android.synthetic.main.skills_header.view.*
 
-
 class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolder>() {
 
-    override fun getItemViewType(position: Int): Int {
-        return when (position) {
+    override fun getItemViewType(position: Int): Int = when (position) {
             0 -> 0
             1 -> 1
             2 -> 2
             else -> 3
         }
-    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -45,5 +43,5 @@ class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolde
         }
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() : Int = items.size
 }

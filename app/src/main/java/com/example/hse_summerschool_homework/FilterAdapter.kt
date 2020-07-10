@@ -5,9 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-
 class FilterAdapter(var items: List<Any>) : RecyclerView.Adapter<ViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -20,5 +18,5 @@ class FilterAdapter(var items: List<Any>) : RecyclerView.Adapter<ViewHolder>() {
         }
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() : Int = items.size
 }

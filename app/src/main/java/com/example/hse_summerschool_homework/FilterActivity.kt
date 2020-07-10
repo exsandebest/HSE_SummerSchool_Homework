@@ -29,7 +29,7 @@ class FilterActivity : AppCompatActivity() {
 
         applyButton.setOnClickListener {
             var idx = 0
-            for (v in recycler.children){
+            for (v in recycler.children) {
                 boxes[idx] = v.checkBox.isChecked
                 ++idx
             }

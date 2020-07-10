@@ -13,11 +13,10 @@ class FilterActivity : AppCompatActivity() {
 
     private var boxes = booleanArrayOf(true, true, true, true, true)
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_filter)
-        if (intent.getBooleanArrayExtra("currentFilter") != null){
+        if (intent.getBooleanArrayExtra("currentFilter") != null) {
             boxes = intent.getBooleanArrayExtra("currentFilter")!!
             var idx = 0
             for (v in recycler.children) {

@@ -18,5 +18,5 @@ class FilterAdapter(var items: List<Any>) : RecyclerView.Adapter<ViewHolder>() {
         }
     }
 
-    override fun getItemCount() : Int = items.size
+    override fun getItemCount(): Int = items.size
 }

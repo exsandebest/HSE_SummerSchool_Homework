@@ -9,13 +9,13 @@ import kotlinx.android.synthetic.main.skills_header.view.*
 
 class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolder>() {
 
-    override fun getItemViewType(position: Int): Int = when (position) {
+    override fun getItemViewType(position: Int): Int =
+        when (position) {
             0 -> 0
             1 -> 1
             2 -> 2
             else -> 3
         }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -24,7 +24,7 @@ class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolde
             1 -> ProjectItemHolder(inflater.inflate(R.layout.project_item, parent, false))
             2 -> SkillsHeaderItemHolder(inflater.inflate(R.layout.skills_header, parent, false))
             3 -> SkillItemHolder(inflater.inflate(R.layout.skills_item, parent, false))
-            else -> throw Exception("Incorrect viewType: ${viewType}")
+            else -> throw Exception("Incorrect viewType: $viewType")
         }
     }
 
@@ -35,7 +35,7 @@ class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolde
             2 -> {
                 (holder as SkillsHeaderItemHolder).bind(items[position] as SkillsHeaderItem)
                 holder.view.filterButton.setOnClickListener {
-                   val int = Intent(it.context, FilterActivity::class.java)
+                    val int = Intent(it.context, FilterActivity::class.java)
                     (it.context as MainActivity).startActivityForResult(int, 0)
                 }
             }
@@ -43,5 +43,5 @@ class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolde
         }
     }
 
-    override fun getItemCount() : Int = items.size
+    override fun getItemCount(): Int = items.size
 }

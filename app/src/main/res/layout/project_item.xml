@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding"
+        android:padding="@dimen/usualPadding"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:id="@+id/projectHeader"/>
 
@@ -18,5 +18,5 @@
         android:id="@+id/projectDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding" />
+        android:padding="@dimen/usualPadding" />
 </LinearLayout>

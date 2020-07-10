@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">О себе</string>
     <string name="githubButton">Github</string>
+    <string name="applyButton">Применить</string>
 </resources>

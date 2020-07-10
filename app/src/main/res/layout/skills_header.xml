@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="start|center_vertical"
-        android:padding="@dimen/padding"
+        android:padding="@dimen/usualPadding"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <ImageButton

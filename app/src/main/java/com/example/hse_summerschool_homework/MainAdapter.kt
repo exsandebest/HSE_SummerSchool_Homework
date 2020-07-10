@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import kotlinx.android.synthetic.main.skills_header.view.*
 
-class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolder>() {
+class MainAdapter(private var items: List<Any>, private var filter: BooleanArray) : RecyclerView.Adapter<ViewHolder>() {
 
     override fun getItemViewType(position: Int): Int =
         when (position) {
@@ -36,7 +36,8 @@ class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolde
                 (holder as SkillsHeaderItemHolder).bind(items[position] as SkillsHeaderItem)
                 holder.view.filterButton.setOnClickListener {
                     val int = Intent(it.context, FilterActivity::class.java)
-                    (it.context as MainActivity).startActivityForResult(int, 0)
+                    int.putExtra("currentFilter", filter)
+                    (it.context as MainActivity).startActivityForResult(int, 111)
                 }
             }
             3 -> (holder as SkillItemHolder).bind(items[position] as SkillItem)

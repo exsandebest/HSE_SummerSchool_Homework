@@ -11,11 +11,20 @@ import kotlinx.android.synthetic.main.filter_item.view.*
 
 class FilterActivity : AppCompatActivity() {
 
-    private val boxes = booleanArrayOf(false, false, false, false, false)
+    private var boxes = booleanArrayOf(true, true, true, true, true)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_filter)
+        if (intent.getBooleanArrayExtra("currentFilter") != null){
+            boxes = intent.getBooleanArrayExtra("currentFilter")!!
+            var idx = 0
+            for (v in recycler.children) {
+                v.checkBox.setChecked(boxes[idx])
+                ++idx
+            }
+        }
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = FilterAdapter(
             listOf(

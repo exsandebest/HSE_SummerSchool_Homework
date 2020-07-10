@@ -1,9 +1,11 @@
 package com.example.hse_summerschool_homework
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import kotlinx.android.synthetic.main.skills_header.view.*
 
 
 class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolder>() {
@@ -32,7 +34,13 @@ class MainAdapter(private var items: List<Any>) : RecyclerView.Adapter<ViewHolde
         when (getItemViewType(position)) {
             0 -> (holder as UserItemHolder).bind(items[position] as UserItem)
             1 -> (holder as ProjectItemHolder).bind(items[position] as ProjectItem)
-            2 -> (holder as SkillsHeaderItemHolder).bind(items[position] as SkillsHeaderItem)
+            2 -> {
+                (holder as SkillsHeaderItemHolder).bind(items[position] as SkillsHeaderItem)
+                holder.view.filterButton.setOnClickListener {
+                   val int = Intent(it.context, FilterActivity::class.java)
+                    (it.context as MainActivity).startActivityForResult(int, 0)
+                }
+            }
             3 -> (holder as SkillItemHolder).bind(items[position] as SkillItem)
         }
     }

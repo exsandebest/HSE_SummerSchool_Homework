@@ -8,7 +8,7 @@ class SkillsHeaderItem(
     val header: String
 )
 
-class SkillsHeaderItemHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+class SkillsHeaderItemHolder(val view: View) : RecyclerView.ViewHolder(view) {
     lateinit var head: SkillsHeaderItem
 
     fun bind(head: SkillsHeaderItem) {

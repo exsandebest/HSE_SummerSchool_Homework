@@ -16,24 +16,26 @@ class FilterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_filter)
-        if (intent.getBooleanArrayExtra("currentFilter") != null) {
-            boxes = intent.getBooleanArrayExtra("currentFilter")!!
-            var idx = 0
-            for (v in recycler.children) {
-                v.checkBox.setChecked(boxes[idx])
-                ++idx
-            }
-        }
+
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = FilterAdapter(
             listOf(
                 FilterItem("< 1 года", 0.5),
-                FilterItem("< 2 лет", 1.5),
-                FilterItem("< 3 лет", 2.5),
-                FilterItem("< 5 лет", 4.5),
+                FilterItem("1-2 года", 1.5),
+                FilterItem("2-3 года", 2.5),
+                FilterItem("3-5 лет", 4.5),
                 FilterItem("> 5 лет", 5.5)
             )
         )
+
+        if (intent.getBooleanArrayExtra("currentFilter") != null) {
+            boxes = intent.getBooleanArrayExtra("currentFilter")!!
+            var idx = 0
+            for (v in recycler.children) {
+                v.checkBox.isChecked = boxes[idx]
+                ++idx
+            }
+        }
 
         applyButton.setOnClickListener {
             var idx = 0

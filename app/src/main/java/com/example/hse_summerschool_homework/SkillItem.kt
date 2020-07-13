@@ -21,8 +21,8 @@ class SkillItemHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
 fun skillTimeString(t: Double): String {
     if (t < 1) return "< 1 года"
-    if (t < 2) return "< 2 лет"
-    if (t < 3) return "< 3 лет"
-    if (t < 5) return "< 5 лет"
+    if (t < 2) return "1-2 года"
+    if (t < 3) return "2-3 года"
+    if (t < 5) return "3-5 лет"
     return "> 5 лет"
 }

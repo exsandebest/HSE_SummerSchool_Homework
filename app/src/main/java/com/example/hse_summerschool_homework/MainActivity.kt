@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     var filter = booleanArrayOf(true, true, true, true, true)
-    val m = mapOf(0.5 to 0, 1.5 to 1, 2.5 to 2, 2.5 to 3, 5.5 to 4)
+    val m = mapOf(0.5 to 0, 1.5 to 1, 2.5 to 2, 4.5 to 3, 5.5 to 4)
     val staticElements = listOf(
         UserItem(
             "Даниил Богданов",
